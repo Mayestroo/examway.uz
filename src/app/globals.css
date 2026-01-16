@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b1f2a;
+  --sand: #f6f1ea;
+  --mist: #edf2f5;
+  --ember: #d97706;
+  --teal: #0f766e;
+  --sun: #f59e0b;
+  --navy: #102a43;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-sand: var(--sand);
+  --color-mist: var(--mist);
+  --color-ember: var(--ember);
+  --color-teal: var(--teal);
+  --color-sun: var(--sun);
+  --color-navy: var(--navy);
+  --color-card: var(--card);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.12), transparent 45%),
+      radial-gradient(circle at 90% 20%, rgba(15, 118, 110, 0.15), transparent 40%),
+      linear-gradient(180deg, #fdfbf8 0%, #f6f1ea 60%, #f1ede5 100%);
+    color: var(--ink);
+    font-family: var(--font-body);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 24px 60px -40px rgba(15, 23, 42, 0.4);
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s ease both;
+  }
+
+  .animate-fade-up-delay {
+    animation: fade-up 0.7s ease both;
+    animation-delay: 0.15s;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fade-up 0.7s ease both;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
